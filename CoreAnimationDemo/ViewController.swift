@@ -10,11 +10,18 @@ import UIKit
 class ViewController: UIViewController {
     
     var myView = UIView()
+    var button = UIButton()
     
     var shapeLayer: CAShapeLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let btnFrame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y + 100, width: view.frame.width, height: 50)
+        button.frame = btnFrame
+        button.backgroundColor = .blue
+        button.setTitle("More", for: .normal)
+        self.view.addSubview(button)
         
         let frame = CGRect(origin: view.center, size: CGSize(width: 100, height: 100))
         myView.frame = frame
@@ -30,10 +37,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        button.addTarget(self, action: #selector(gotoMore), for: .touchUpInside)
 //        shapeLayer.fillColor = UIColor.clear.cgColor
 //        shapeLayer.strokeColor = UIColor.blue.cgColor
 //        shapeLayer.path = getBezierPath().cgPath
         springAnimation()
+    }
+    
+    @objc func gotoMore() {
+        if let vc = storyboard?.instantiateViewController(identifier: "SecondVC") as? SecondVC {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func getBezierPath () -> UIBezierPath {
@@ -84,4 +98,53 @@ extension ViewController: CAAnimationDelegate {
         print("Animation stopped", flag)
     }
 }
+
+
+class SecondVC : UIViewController {
+    
+    var list = UITableView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        list.frame = view.frame
+        view.addSubview(list)
+        
+        self.list.dataSource = self
+        self.list.delegate = self
+        registerTableViewCells()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    private func registerTableViewCells() {
+        let textFieldCell = UINib(nibName: "ListCell",
+                                  bundle: nil)
+        self.list.register(textFieldCell,
+                                forCellReuseIdentifier: "cell")
+    }
+}
+
+
+
+extension SecondVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        7
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListCell
+        cell.setData(index: indexPath.row)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+    
+}
+
+
+
 

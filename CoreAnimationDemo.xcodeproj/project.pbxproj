@@ -13,6 +13,8 @@
 		45A8BD3628944F8E008CC7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A8BD3428944F8E008CC7F8 /* Main.storyboard */; };
 		45A8BD3828944F9A008CC7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A8BD3728944F9A008CC7F8 /* Assets.xcassets */; };
 		45A8BD3B28944F9A008CC7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A8BD3928944F9A008CC7F8 /* LaunchScreen.storyboard */; };
+		45A8BD6A2895ABAF008CC7F8 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8BD682895ABAF008CC7F8 /* ListCell.swift */; };
+		45A8BD6B2895ABAF008CC7F8 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A8BD692895ABAF008CC7F8 /* ListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		45A8BD3728944F9A008CC7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45A8BD3A28944F9A008CC7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45A8BD3C28944F9A008CC7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45A8BD682895ABAF008CC7F8 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		45A8BD692895ABAF008CC7F8 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				45A8BD2E28944F8E008CC7F8 /* AppDelegate.swift */,
 				45A8BD3028944F8E008CC7F8 /* SceneDelegate.swift */,
 				45A8BD3228944F8E008CC7F8 /* ViewController.swift */,
+				45A8BD682895ABAF008CC7F8 /* ListCell.swift */,
+				45A8BD692895ABAF008CC7F8 /* ListCell.xib */,
 				45A8BD3428944F8E008CC7F8 /* Main.storyboard */,
 				45A8BD3728944F9A008CC7F8 /* Assets.xcassets */,
 				45A8BD3928944F9A008CC7F8 /* LaunchScreen.storyboard */,
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A8BD3B28944F9A008CC7F8 /* LaunchScreen.storyboard in Resources */,
+				45A8BD6B2895ABAF008CC7F8 /* ListCell.xib in Resources */,
 				45A8BD3828944F9A008CC7F8 /* Assets.xcassets in Resources */,
 				45A8BD3628944F8E008CC7F8 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A8BD3328944F8E008CC7F8 /* ViewController.swift in Sources */,
+				45A8BD6A2895ABAF008CC7F8 /* ListCell.swift in Sources */,
 				45A8BD2F28944F8E008CC7F8 /* AppDelegate.swift in Sources */,
 				45A8BD3128944F8E008CC7F8 /* SceneDelegate.swift in Sources */,
 			);
